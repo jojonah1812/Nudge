@@ -1,1 +1,2 @@
-# Nudge
+# MERN-template
+MERN template
