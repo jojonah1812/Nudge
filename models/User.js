@@ -28,18 +28,6 @@ const userSchema = new Schema({
     required: "Password is Required",
     validate: [({ length }) => length >= 6, "Password should be longer."],
   },
-  startDate: {
-    type: Date,
-    required: true,
-  },
-  skillset: {
-    type: String,
-    required: true,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
   phone: {
     type: String,
     required: true,
@@ -56,10 +44,18 @@ const userSchema = new Schema({
     type: Number,
     required: true,
   },
+  startDate: {
+    type: Date,
+    required: "When are you available to start working?",
+  },
+  skillset: {
+    type: String,
+    required: true,
+  },
 
   education: {
     type: String,
-    required: true,
+    required: "What type of education do you have? Self-taught? University? Bootcamp?",
   },
 
   //// COMPANY ONLY INFO ////
@@ -72,7 +68,7 @@ const userSchema = new Schema({
   postedJobs: {
     // ????????????
   },
-  Name: {},
+  
 });
 
 userSchema.pre("save", function () {
