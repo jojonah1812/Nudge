@@ -5,18 +5,17 @@ const bcrypt = require("bcrypt");
 const SALT_ROUNDS = 6;
 
 const userSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
+  // id: {
+  //   type: String,
+  //   required: true,
+  // },
+  employer: {
+    type: Boolean,
+    required: "Are you an employer?",
   },
-  lastName: {
+  name: {
     type: String,
     required: true,
-  },
-  username: {
-    type: String,
-    required: true,
-    unique: true,
   },
   email: {
     type: String,
@@ -29,11 +28,57 @@ const userSchema = new Schema({
     required: "Password is Required",
     validate: [({ length }) => length >= 6, "Password should be longer."],
   },
-  date: {
+  startDate: {
     type: Date,
-    default: Date.now,
+    required: true,
+  },
+  skillset: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  state: {
+    type: String,
+    required: true,
+  },
+  zipcode: {
+    type: Number,
+    required: true,
+  },
+
+  education: {
+    type: String,
+    required: true,
+  },
+
+  //// COMPANY ONLY INFO ////
+  company: {
+    type: String,
+  },
+  companyDesc: {
+    type: String,
+  },
+  postedJobs: {
+    // ????????????
   },
 });
+
+
+ 
+  
+  
+
 
 userSchema.pre("save", function () {
   if (!this.isModified("password")) {
@@ -44,7 +89,7 @@ userSchema.pre("save", function () {
       new Error("Password must have at least 6 characters")
     );
   }
-  return bcrypt.hash(this.password, SALT_ROUNDS).then(hash => {
+  return bcrypt.hash(this.password, SALT_ROUNDS).then((hash) => {
     this.password = hash;
   });
 });
