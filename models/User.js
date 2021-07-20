@@ -72,13 +72,8 @@ const userSchema = new Schema({
   postedJobs: {
     // ????????????
   },
+  Name: {},
 });
-
-
- 
-  
-  
-
 
 userSchema.pre("save", function () {
   if (!this.isModified("password")) {
