@@ -5,7 +5,7 @@ import {
   AuthenticationContainer,
   AuthenticationForm,
 } from "../../components/Authentication/";
-
+// can insert code for signup and login - forms tether to state use useeffect and usestate use as template for landing page
 const loginFields = [
   { name: "username", type: "text", placeholder: "username" },
   { name: "password", type: "password", placeholder: "password" },
