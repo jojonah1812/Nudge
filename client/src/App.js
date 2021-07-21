@@ -3,9 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from './utils/auth';
 import LandingPage from './pages/LandingPage/LandingPage';
-import UserProfile from './pages/UserProfile/UserProfile';
-import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
-import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
+//import UserProfile from './pages/UserProfile/UserProfile';
+//import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
+//import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -17,7 +17,7 @@ function App() {
     <AuthProvider>
       <Router>
       <div>
-        <Nav />
+        <Navbar />
         <Hero />
         <Switch>
           <ProtectedRoute exact path="/" onLoginFail="/login" component={LandingPage} />

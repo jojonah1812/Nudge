@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import Navbar from 'react-bootstrap/Navbar';
+import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap';
 
 //include React-bootstrap - ref pupster
+function HeaderNav () {
+  return(
 <Navbar bg="light" expand="lg">
   <Container>
     <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
@@ -29,6 +31,6 @@ import Navbar from 'react-bootstrap/Navbar';
     </Navbar.Collapse>
   </Container>
 </Navbar>
+)};
 
-
-export default Navbar;
+export default HeaderNav;

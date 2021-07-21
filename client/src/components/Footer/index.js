@@ -1,22 +1,18 @@
 import React from "react";
 import "./style.css";
-import React from "react";
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+//import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
-const FooterPage = () => {
+const Footer = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
-      <MDBContainer fluid className="text-center text-md-left">
-        <MDBRow>
-          <MDBCol md="6">
+    
+   <div className="footer">
+     
+     
             <h5 className="title">NUDGE</h5>
             <p>
-              Here you can use rows and columns here to organize your footer
-              content.
+              Nudge your way to your new career!
             </p>
-          </MDBCol>
-          <MDBCol md="6">
-            <h5 className="title">About Us</h5>
+              <h5 className="title">About Us</h5>
             <ul>
               <li className="list-unstyled">
                 <a href="#!">Mission Statement</a>
@@ -25,7 +21,7 @@ const FooterPage = () => {
             <h5 className="title">Contact Us</h5>
             <ul>
               <li className="list-unstyled">
-                <a href="#!">email</a>
+                <a href="#!">Email</a>
               </li>
               <li className="list-unstyled">
                 <a href="#!">Twitter</a>
@@ -34,16 +30,11 @@ const FooterPage = () => {
                 <a href="#!">Corporate Offices</a>
               </li>
             </ul>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-      <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.Nudge.com"> Nudge.com </a>
-        </MDBContainer>
-      </div>
-    </MDBFooter>
+          <div className="footer-copyright text-center py-3">
+              &copy; {new Date().getFullYear()} Copyright: <a href="https://www.Nudge.com"> Nudge.com </a>
+          </div>
+    </div>
   );
 }
 
-export default FooterPage;
+export default Footer;
