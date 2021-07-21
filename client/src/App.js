@@ -18,16 +18,17 @@ function App() {
       <Router>
       <div>
         <Nav />
-        <Footer />
         <Hero />
         <Switch>
           <ProtectedRoute exact path="/" onLoginFail="/login" component={LandingPage} />
           <Route exact path="/login" component={LandingPage} />
           <Route exact path="/signup" component={LandingPage} />
-          <Route exact path="/jobsposts" component={JobBoardForm} />
+        {/*  <Route exact path="/jobsposts" component={JobBoardForm} />
           <Route exact path="/jobboard" component={JobBoardPage} />
           <Route exact path="/userprofile" component={UserProfile} />
+      */}
         </Switch>
+        <Footer/>
         </div> 
       </Router>
     </AuthProvider>
