@@ -8,6 +8,7 @@ import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
 import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Hero from './components/Hero';
 
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
@@ -15,6 +16,10 @@ function App() {
   return (
     <AuthProvider>
       <Router>
+      <div>
+        <Nav />
+        <Footer />
+        <Hero />
         <Switch>
           <ProtectedRoute exact path="/" onLoginFail="/login" component={LandingPage} />
           <Route exact path="/login" component={LandingPage} />
@@ -23,8 +28,11 @@ function App() {
           <Route exact path="/jobboard" component={JobBoardPage} />
           <Route exact path="/userprofile" component={UserProfile} />
         </Switch>
+        </div> 
       </Router>
     </AuthProvider>
+
+
     // <div className="App">
     //   {/* <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
