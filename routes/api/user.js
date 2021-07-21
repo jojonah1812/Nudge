@@ -1,6 +1,6 @@
 const router = require("express").Router();
 // imports all logic from controller
-const userController = require("../../controllers/userController");
+const userController = require("../../controllers/UserController");
 const passport = require("../../configs/passport");
 
 router.route("/:id").get(userController.getUser);
