@@ -2,8 +2,13 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from './utils/auth';
-import Login from './pages/Login/Login';
 import LandingPage from './pages/LandingPage/LandingPage';
+import UserProfile from './pages/UserProfile/UserProfile';
+import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
+import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
@@ -12,7 +17,11 @@ function App() {
       <Router>
         <Switch>
           <ProtectedRoute exact path="/" onLoginFail="/login" component={LandingPage} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" component={LandingPage} />
+          <Route exact path="/signup" component={LandingPage} />
+          <Route exact path="/jobsposts" component={JobBoardForm} />
+          <Route exact path="/jobboard" component={JobBoardPage} />
+          <Route exact path="/userprofile" component={UserProfile} />
         </Switch>
       </Router>
     </AuthProvider>

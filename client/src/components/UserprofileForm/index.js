@@ -78,12 +78,6 @@ import Form from 'react-bootstrap/Form';
     </Form.Group>
   </Row>
 
-  <Row className="mb-3">
-    <Form.Group as={Col} controlId="formGridCity">
-      <Form.Label>City</Form.Label>
-      <Form.Control placeholder="City" />
-    </Form.Group>
-   
   <Button variant="primary" type="submit">
     Submit
   </Button>

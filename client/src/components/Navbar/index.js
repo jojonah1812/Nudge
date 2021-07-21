@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
-import Navbar from 'react-bootstrap/Navbar'
+import Navbar from 'react-bootstrap/Navbar';
+
 //include React-bootstrap - ref pupster
 <Navbar bg="light" expand="lg">
   <Container>
@@ -12,11 +13,11 @@ import Navbar from 'react-bootstrap/Navbar'
         <Nav.Link href="#nudge">NUDGE</Nav.Link>
        {/* <Nav.Link href="#link">Link</Nav.Link>*/}
        <Nav.Link href="./Userprofile">UserProfile</Nav.Link>
-       <Nav.Link href="./">Post a Job</Nav.Link>
+       <Nav.Link href="./JobPostForm">Post a Job</Nav.Link>
        <Nav.Link href="#link">Job Postings</Nav.Link>
-       <Nav.Link href="#link">Login</Nav.Link>
-       <Nav.Link href="#link">Signup</Nav.Link>
-       <Nav.Link href="./logout">Logout</Nav.Link>
+       <Nav.Link href="LoginForm">Login</Nav.Link>
+       <Nav.Link href="./SignupForm">Signup</Nav.Link>
+       <Nav.Link href="./Logout">Logout</Nav.Link>
          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -28,3 +29,6 @@ import Navbar from 'react-bootstrap/Navbar'
     </Navbar.Collapse>
   </Container>
 </Navbar>
+
+
+export default Navbar;
