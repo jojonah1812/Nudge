@@ -48,14 +48,37 @@ const userSchema = new Schema({
     type: Date,
     required: "When are you available to start working?",
   },
-  skillset: {
+
+  salaryRange: {
     type: String,
     required: true,
   },
 
-  education: {
+  typeOfWork: {
     type: String,
-    required: "What type of education do you have? Self-taught? University? Bootcamp?",
+    required: "You are looking for full-time, part-time, contract?",
+  },
+
+  experienceLevel: {
+    type: String,
+  },
+
+  technicalEdu: {
+    type: String,
+    required:
+      "What type of education do you have? Self-taught? University? Bootcamp?",
+  },
+
+  school: {
+    type: String,
+    required:
+      "What type of education do you have? Self-taught? University? Bootcamp?",
+    required: true,
+  },
+
+  skillset: {
+    type: String,
+    required: true,
   },
 
   //// COMPANY ONLY INFO ////
@@ -68,7 +91,6 @@ const userSchema = new Schema({
   postedJobs: {
     // ????????????
   },
-  
 });
 
 userSchema.pre("save", function () {

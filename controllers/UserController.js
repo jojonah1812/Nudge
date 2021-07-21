@@ -4,11 +4,14 @@ const { User } = db;
 
 module.exports = {
     signup: (req, res) => {
-        const { email, firstName, lastName, username } = req.body
+        // creates req.body
+        const { name, email, password, phone, city, state, zipcode, startDate, salaryRange, typeOfWork, experienceLevel, technicalEdu, school} = req.body
         try {
-            if(!email || !firstName || !lastName || !username) {
+            // just for required fields, verify entered
+            if(!email || !name || !password || !zipcode ) {
                 return res.status(400).send("Please fill out all fields");
             }
+            // testing for doubles
             User.findOne({$or: [{email}, {username}]}).then(user => {
                 if(user === null) {
                     User.create(req.body)

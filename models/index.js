@@ -1,7 +1,7 @@
 module.exports = {
-  User: require("./User"),
+  User: require("./user"),
 };
 module.exports = {
-  Jobs: require("./Jobs"),
+  Jobs: require("./jobs"),
 };
 
