@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const bcrypt = require("bcrypt");
 
 const SALT_ROUNDS = 6;
 
@@ -46,23 +45,23 @@ const jobsSchema = new Schema({
   },
 });
 
-jobsSchema.pre("save", function () {
-  if (!this.isModified("password")) {
-    return Promise.resolve();
-  }
-  if (this.password.length < 6) {
-    return Promise.reject(
-      new Error("Password must have at least 6 characters")
-    );
-  }
-  return bcrypt.hash(this.password, SALT_ROUNDS).then((hash) => {
-    this.password = hash;
-  });
-});
+// jobsSchema.pre("save", function () {
+//   if (!this.isModified("password")) {
+//     return Promise.resolve();
+//   }
+//   if (this.password.length < 6) {
+//     return Promise.reject(
+//       new Error("Password must have at least 6 characters")
+//     );
+//   }
+//   return bcrypt.hash(this.password, SALT_ROUNDS).then((hash) => {
+//     this.password = hash;
+//   });
+// });
 
-jobsSchema.methods.verifyPassword = async function (password) {
-  return await bcrypt.compare(password, this.password);
-};
+// jobsSchema.methods.verifyPassword = async function (password) {
+//   return await bcrypt.compare(password, this.password);
+// };
 
 const Jobs = mongoose.model("Jobs", jobsSchema);
 
