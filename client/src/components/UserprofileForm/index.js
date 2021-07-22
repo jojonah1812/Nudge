@@ -1,15 +1,18 @@
 import React from "react";
 import "./style.css";
 import Form from 'react-bootstrap/Form';
-
-
-//User Profile Input Fields
+//confirm if s/b form or list
+const User = () => {
+  return (
+    
+   <div className="user">
 
 <Form>
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
       <Form.Control type="email" placeholder="Enter email" />
+
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPassword">
@@ -81,4 +84,14 @@ import Form from 'react-bootstrap/Form';
   <Button variant="primary" type="submit">
     Submit
   </Button>
+
+  <Button variant="primary" type="edit">
+   Edit
+  </Button>
 </Form>
+
+</div>
+
+ )};
+
+export default User;
