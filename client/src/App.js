@@ -3,10 +3,10 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from './utils/auth';
 import LandingPage from './pages/LandingPage/LandingPage';
-//import UserProfile from './pages/UserProfile/UserProfile';
-//import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
-//import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
-//import JobDetialPage from './pages/JobDetailPage/JobDetialPage';
+import UserProfile from './pages/UserProfile/UserProfile';
+import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
+import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
+import JobDetailPage from './pages/JobDetailPage/JobDetailPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -25,12 +25,11 @@ function App() {
           <ProtectedRoute exact path="/" onLoginFail="/login" component={LandingPage} />
           <Route exact path="/login" component={LandingPage} />
           <Route exact path="/signup" component={LandingPage} />
-          {/*  <ProtectedRoute exact path="/" onLoginFail="/signup" component={LandingPage} />
-        <ProtectedRoute exact path="/" onLoginFail="/post" component={JobPostsPage} />
-          <ProtectedRoute exact path="/" onLoginFail="/jobs" component={JobBoardPage} />
-          <ProtectedRoute exact path="/" onLoginFail="/user" component={UserProfile} />
-         <Route exact path="/jobs/detail" component={JobsDetailPage} />
-  */}
+          <Route exact path="/post"  component={JobPostsPage} />
+          <Route exact path="/jobs"  component={JobBoardPage} />
+          <Route exact path="/user" component={UserProfile} />
+          <Route exact path="/jobs/detail" component={JobDetailPage} />
+  
                 </Switch>
         <Footer/>
         </div> 
