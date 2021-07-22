@@ -39,7 +39,7 @@
 
 body {
   height: 100%;
-  overflow: hidden;
+  overflow: 'scroll';
   width: 100% !important;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;

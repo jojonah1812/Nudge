@@ -1,119 +1,115 @@
-import React, { useState, useRef } from "react";
-import { Redirect } from "react-router-dom";
-import axios from "axios";
-import API from "../../utils/axios/API";
-import './LandingPage.css';
-import { signup, useAuth } from "../../utils/auth/";
-//import Navbar from './components/Navbar';
-//import Footer from './components/Footer';
-//import Hero from './components/Hero';
-import {
-  AuthenticationContainer,
-  AuthenticationForm,
-} from "../../components/Authentication/";
-{/*
-import LoginForm from "./components/LoginForm";
-import SignupForm from "./components/SignupForm";
-*/}
+import React, { Component } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-// can insert code for signup and login - forms tether to state use useeffect and usestate use as template for landing page
-const loginFields = [
-  { name: "email", type: "text", placeholder: "email" },
-  { name: "password", type: "password", placeholder: "password" },
-];
-const signUpFields = [
-  { name: "name", type: "text", placeholder: "name" },
-  { name: "email", type: "text", placeholder: "JohnSmith@gmail.com" },
-  { name: "password1", type: "password", placeholder: "password" },
-  { name: "phone", type: "text", placeholder: "phone" },
-  { name: "city", type: "text", placeholder: "city" },
-  { name: "zip", type: "text", placeholder: "zip code" },
-  { name: "start date", type: "text", placeholder: "start date" },
-  { name: "salary", type: "password", placeholder: "salary" },  
-  { name: "job type", type: "text", placeholder: "ft/pt/contract" },
-  { name: "experience", type: "text", placeholder: "entry/mid-level/senior" },
-  { name: "tech education", type: "password",  placeholder: "school name" },
-];
+class LandingPage extends Component {
+  render() {
+    return (
+      <div>
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
 
-const LandingPage = () => {
-  const [isLeft, setIsLeft] = useState(false);
-  const [formData, setFormData] = useState();
-  const [currentForm, setCurrentForm] = useState("LoginForm");
-  const sliderRef = useRef();
-  const topLayerRef = useRef();
-  const { login, isPending, isLoggedIn, error } = useAuth();
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
 
-  const handleChange = formObj => {
-    setFormData({ ...formData, ...formObj });
-  };
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Remember me" />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
 
-  const handleClick = e => {
-    e.preventDefault();
-    if (!isLeft) {
-      setIsLeft(true);
-      setFormData();
-      setCurrentForm("Signup");
-      sliderRef.current.style.marginLeft = "0";
-      topLayerRef.current.style.marginLeft = "100%";
-      loginFields.forEach(login => document.getElementById(login.name).value = "");
-    }
+        <Form>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+            </Form.Group>
 
-    if (isLeft) {
-      setIsLeft(false);
-      setFormData();
-      setCurrentForm("LoginForm");
-      sliderRef.current.style.marginLeft = "50%";
-      topLayerRef.current.style.marginLeft = "0";
-      signUpFields.forEach(login => document.getElementById(login.name).value = "");
-    }
-  };
+            <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+          </Row>
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    if(currentForm === "LoginForm") {
-        login(formData);
-    } else {
-        signup(formData);
-        const { username1, password1 } = formData;
-        login({username: username1, password: password1});
-    }
-  };
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridName">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="text" placeholder="First and Last Name" />
+            </Form.Group>
 
-  if(isLoggedIn) return <Redirect to="/" />;
-  if(isPending) return <h1>Loading...</h1>;
+            <Form.Group as={Col} controlId="formGridPhone">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control placeholder="phone number" />
+            </Form.Group>
+          </Row>
 
-  return (
-    <>
-      <div id='back'>
-        <div className='backRight'></div>
-        <div className='backLeft'></div>
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridCity">
+              <Form.Label>City</Form.Label>
+              <Form.Control placeholder="City" />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridZip">
+              <Form.Label>Zip</Form.Label>
+              <Form.Control placeholder="Zip code" />
+            </Form.Group>
+          </Row>
+
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridStartDate">
+              <Form.Label>Start Date</Form.Label>
+              <Form.Control type="date" placeholder="mm/dd/yyyy" />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridSalary">
+              <Form.Label>Salary</Form.Label>
+              <Form.Control placeholder="Salary" />
+            </Form.Group>
+          </Row>
+
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridJobType">
+              <Form.Label>Job Type</Form.Label>
+              <Form.Control placeholder="FT/PT/Contract" />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridExperienceLevel">
+              <Form.Label>Experience </Form.Label>
+              <Form.Control placeholder="Entry/Mid-level/Senior" />
+            </Form.Group>
+          </Row>
+
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="formGridTechnicalEducation">
+              <Form.Label>Tech education</Form.Label>
+              <Form.Control placeholder="Technical Education" />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridSchool">
+              <Form.Label>School</Form.Label>
+              <Form.Control placeholder="School Name" />
+            </Form.Group>
+          </Row>
+
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
       </div>
-      <div id='slideBox' ref={sliderRef}>
-        <div className='topLayer' ref={topLayerRef}>
-          <AuthenticationContainer direction='right'>
-            <AuthenticationForm
-              formData={loginFields}
-              title={"Login"}
-              handleChange={handleChange}
-              formState={formData}
-            />
-            <button onClick={handleClick}>Sign Up</button>
-            <button onClick={handleSubmit}>Login</button>
-          </AuthenticationContainer>
-          <AuthenticationContainer direction='left'>
-            <AuthenticationForm
-              formData={signUpFields}
-              title={"Sign Up"}
-              handleChange={handleChange}
-              formState={formData}
-            />
-            <button onClick={handleSubmit}>Sign Up</button>
-            <button onClick={handleClick}>Login</button>
-          </AuthenticationContainer>
-        </div>
-      </div>
-    </>
-  );
-};
+    );
+  }
+}
 
 export default LandingPage;
