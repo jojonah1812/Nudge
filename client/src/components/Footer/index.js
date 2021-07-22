@@ -6,8 +6,7 @@ const Footer = () => {
   return (
     
    <div className="footer">
-     
-     
+          
             <h5 className="title">NUDGE</h5>
             <p>
               Nudge your way to your new career!

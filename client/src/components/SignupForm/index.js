@@ -2,8 +2,10 @@ import React from "react";
 import "./style.css";
 import Form from 'react-bootstrap/Form';
 
-
-//add other fileds
+function Signup() {
+  return (
+    
+   <div className="signup">
 
 <Form>
   <Row className="mb-3">
@@ -61,7 +63,7 @@ import Form from 'react-bootstrap/Form';
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridExperienceLevel">
-      <Form.Label>PExperience </Form.Label>
+      <Form.Label>Experience </Form.Label>
       <Form.Control placeholder="Entry/Mid-level/Senior" />
     </Form.Group>
   </Row>
@@ -83,6 +85,8 @@ import Form from 'react-bootstrap/Form';
     Submit
   </Button>
 </Form>
+</div>
 
+  )};
 
-export default Form;
+export default Signup;

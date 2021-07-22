@@ -1,30 +1,44 @@
 import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
-//import API from "../../utils/axios/API";
+import API from "../../utils/axios/API";
 import './LandingPage.css';
 import { signup, useAuth } from "../../utils/auth/";
+//import Navbar from './components/Navbar';
+//import Footer from './components/Footer';
+//import Hero from './components/Hero';
 import {
   AuthenticationContainer,
   AuthenticationForm,
 } from "../../components/Authentication/";
+{/*
+import LoginForm from "./components/LoginForm";
+import SignupForm from "./components/SignupForm";
+*/}
+
 // can insert code for signup and login - forms tether to state use useeffect and usestate use as template for landing page
 const loginFields = [
-  { name: "username", type: "text", placeholder: "username" },
+  { name: "email", type: "text", placeholder: "email" },
   { name: "password", type: "password", placeholder: "password" },
 ];
 const signUpFields = [
-  { name: "username1", type: "text", placeholder: "username" },
-  { name: "password1", type: "password", placeholder: "password" },
+  { name: "name", type: "text", placeholder: "name" },
   { name: "email", type: "text", placeholder: "JohnSmith@gmail.com" },
-  { name: "firstName", type: "text", placeholder: "First Name" },
-  { name: "lastName", type: "text", placeholder: "Last Name" },
+  { name: "password1", type: "password", placeholder: "password" },
+  { name: "phone", type: "text", placeholder: "phone" },
+  { name: "city", type: "text", placeholder: "city" },
+  { name: "zip", type: "text", placeholder: "zip code" },
+  { name: "start date", type: "text", placeholder: "start date" },
+  { name: "salary", type: "password", placeholder: "salary" },  
+  { name: "job type", type: "text", placeholder: "ft/pt/contract" },
+  { name: "experience", type: "text", placeholder: "entry/mid-level/senior" },
+  { name: "tech education", type: "password",  placeholder: "school name" },
 ];
 
 const LandingPage = () => {
   const [isLeft, setIsLeft] = useState(false);
   const [formData, setFormData] = useState();
-  const [currentForm, setCurrentForm] = useState("login");
+  const [currentForm, setCurrentForm] = useState("LoginForm");
   const sliderRef = useRef();
   const topLayerRef = useRef();
   const { login, isPending, isLoggedIn, error } = useAuth();
@@ -38,7 +52,7 @@ const LandingPage = () => {
     if (!isLeft) {
       setIsLeft(true);
       setFormData();
-      setCurrentForm("signup");
+      setCurrentForm("Signup");
       sliderRef.current.style.marginLeft = "0";
       topLayerRef.current.style.marginLeft = "100%";
       loginFields.forEach(login => document.getElementById(login.name).value = "");
@@ -47,7 +61,7 @@ const LandingPage = () => {
     if (isLeft) {
       setIsLeft(false);
       setFormData();
-      setCurrentForm("login");
+      setCurrentForm("LoginForm");
       sliderRef.current.style.marginLeft = "50%";
       topLayerRef.current.style.marginLeft = "0";
       signUpFields.forEach(login => document.getElementById(login.name).value = "");
@@ -56,7 +70,7 @@ const LandingPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if(currentForm === "login") {
+    if(currentForm === "LoginForm") {
         login(formData);
     } else {
         signup(formData);

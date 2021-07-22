@@ -2,6 +2,9 @@ import React from "react";
 import "./style.css";
 import Form from 'react-bootstrap/Form';
 
+function LoginForm() {
+  return (
+<div>
 <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
@@ -23,6 +26,7 @@ import Form from 'react-bootstrap/Form';
     Submit
   </Button>
 </Form>
+</div>
+  )};
 
-
-export default Form;
+export default LoginForm;

@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 //import UserProfile from './pages/UserProfile/UserProfile';
 //import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
 //import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
+//import JobDetialPage from './pages/JobDetailPage/JobDetialPage';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -20,39 +21,23 @@ function App() {
         <Navbar />
         <Hero />
         <Switch>
+        {/*<ProtectedRoute exact path="/" onLoginFail="/login" component={JobBoardPage} />  create all routes as protected and use onLoginFail*/}
           <ProtectedRoute exact path="/" onLoginFail="/login" component={LandingPage} />
           <Route exact path="/login" component={LandingPage} />
           <Route exact path="/signup" component={LandingPage} />
-        {/*  <Route exact path="/jobsposts" component={JobBoardForm} />
-          <Route exact path="/jobboard" component={JobBoardPage} />
-          <Route exact path="/userprofile" component={UserProfile} />
-      */}
-        </Switch>
+          {/*  <ProtectedRoute exact path="/" onLoginFail="/signup" component={LandingPage} />
+        <ProtectedRoute exact path="/" onLoginFail="/post" component={JobPostsPage} />
+          <ProtectedRoute exact path="/" onLoginFail="/jobs" component={JobBoardPage} />
+          <ProtectedRoute exact path="/" onLoginFail="/user" component={UserProfile} />
+         <Route exact path="/jobs/detail" component={JobsDetailPage} />
+  */}
+                </Switch>
         <Footer/>
         </div> 
       </Router>
     </AuthProvider>
+    
+  )};
 
-
-    // <div className="App">
-    //   {/* <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header> */}
-
-    // <Login />
-    // </div>
-  );
-}
 
 export default App;
