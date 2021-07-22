@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 
-class UserProfile extends Component {
+class JobDetailPage extends Component {
 
     render() {
         return (  
-            <div>USER PROFILE</div>
+            <div>JOB DETAIL</div>
         )
          
     }
@@ -13,4 +13,4 @@ class UserProfile extends Component {
     };     
     
     
-    export default UserProfile;
+    export default JobDetailPage;
