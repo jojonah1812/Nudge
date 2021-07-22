@@ -6,6 +6,8 @@ class JobDetailPage extends Component {
     render() {
         return (  
             <div>JOB DETAIL</div>
+
+            
         )
          
     }

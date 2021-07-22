@@ -23,7 +23,7 @@ function Signup() {
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridName">
       <Form.Label>Email</Form.Label>
-      <Form.Control type="email" placeholder="First and Last Name" />
+      <Form.Control type="text" placeholder="First and Last Name" />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridPhone">
