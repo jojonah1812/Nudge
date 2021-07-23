@@ -1,26 +1,25 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
-//import Footer from "../components/Footer";
-//import Navbar from "../components/Navbar";
-//import Hero from "../components/Hero";
-//import API from "../../utils/axios/API";
-//import { Col, Row, Container } from "../components/Grid";
-//import { List } from "../components/List";
-//import { Col, Row, Container } from "react-bootstrap/Grid";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import API from "../../utils/axios/API";
+import { Col, Row, Container } from "react-bootstrap/Grid";
 import { List } from "../components/List";
+
 function JobBoardPage() {
-  const [JobBoard, setJobBoard] = useState(0);
+  const [jobs, setJobs] = useState(0);
   getJobs = () => {
     API.getJobs()
       .then((res) =>
-        setJobBoard({
-          JobBoard: res.data,
+        setJobs({
+          jobs: res.data,
         })
       )
       .catch(() =>
-        setJobBoard({
-          JobBoard: [],
+        setJobs({
+          jobs: [],
           message: "No New Jobs Found, Try a Different Query",
         })
       );
@@ -31,45 +30,27 @@ function JobBoardPage() {
         <Col size="md-12">
           <Jumbotron>
             <h1 className="text-center">
-              <strong>(React) Google Books Search</strong>
+              <strong>(React) Nudge </strong>
             </h1>
-            <h2 className="text-center">
-              Search for and Save Books of Interest.
-            </h2>
+            <h2 className="text-center">Search for jobs.</h2>
           </Jumbotron>
-        </Col>
-        <Col size="md-12">
-          <Card title="Book Search" icon="far fa-book">
-            <Form
-              handleInputChange={this.handleInputChange}
-              handleFormSubmit={this.handleFormSubmit}
-              q={this.state.q}
-            />
-          </Card>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
           <Card title="Results">
-            {this.state.books.length ? (
+            {this.state.jobs.length ? (
               <List>
-                {this.state.books.map((book) => (
-                  <Book
-                    key={book.id}
-                    title={book.volumeInfo.title}
-                    subtitle={book.volumeInfo.subtitle}
-                    link={book.volumeInfo.infoLink}
-                    authors={book.volumeInfo.authors.join(", ")}
-                    description={book.volumeInfo.description}
-                    image={book.volumeInfo.imageLinks.thumbnail}
-                    Button={() => (
-                      <button
-                        onClick={() => this.handleBookSave(book.id)}
-                        className="btn btn-primary ml-2"
-                      >
-                        Save
-                      </button>
-                    )}
+                {this.state.jobs.map((job) => (
+                  <Job
+                    id={job.id}
+                    position={job.position}
+                    positionReqLang={job.positionReqLang}
+                    positionReqTech={job.positionReqTech}
+                    positionReqExp={job.positionReqExp}
+                    salaryRange={job.salaryRange}
+                    nameAuthor={job.nameAuthor}
+                    emailAuthor={job.emailAuthor}
                   />
                 ))}
               </List>
