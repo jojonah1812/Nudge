@@ -7,6 +7,7 @@ import UserProfile from './pages/UserProfile/UserProfile';
 import JobBoardPage from './pages/JobBoardPage/JobBoardPage';
 import JobPostsPage from './pages/JobPostsPage/JobPostsPage';
 import JobDetailPage from './pages/JobDetailPage/JobDetailPage';
+import UserProfileList from './pages/UserProfile/UserProfileList';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/jobs"  component={JobBoardPage} />
           <Route exact path="/user" component={UserProfile} />
           <Route exact path="/jobs/detail" component={JobDetailPage} />
+          <Route exact path="/user/list" component={UserProfileList} />
   
                 </Switch>
         <Footer/>
