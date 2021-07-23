@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
+import Jobs from "../components/Jobs";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import API from "../../utils/axios/API";
@@ -9,8 +10,9 @@ import { Col, Row, Container } from "react-bootstrap/Grid";
 import { List } from "../components/List";
 
 function JobBoardPage() {
-  const [jobs, setJobs] = useState(0);
-  getJobs = () => {
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
     API.getJobs()
       .then((res) =>
         setJobs({
@@ -20,10 +22,10 @@ function JobBoardPage() {
       .catch(() =>
         setJobs({
           jobs: [],
-          message: "No New Jobs Found, Try a Different Query",
         })
       );
-  };
+  }, []);
+
   return (
     <Container>
       <Row>
@@ -39,11 +41,12 @@ function JobBoardPage() {
       <Row>
         <Col size="md-12">
           <Card title="Results">
-            {this.state.jobs.length ? (
+            {jobs.length ? (
               <List>
-                {this.state.jobs.map((job) => (
-                  <Job
+                {jobs.map((job) => (
+                  <Jobs
                     id={job.id}
+                    datePosted={job.datePosted}
                     position={job.position}
                     positionReqLang={job.positionReqLang}
                     positionReqTech={job.positionReqTech}
@@ -55,7 +58,9 @@ function JobBoardPage() {
                 ))}
               </List>
             ) : (
-              <h2 className="text-center">{this.state.message}</h2>
+              <h2 className="text-center">
+                No New Jobs Found, Try a Different Query
+              </h2>
             )}
           </Card>
         </Col>
