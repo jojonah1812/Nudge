@@ -4,3 +4,18 @@
   
   
 } */
+
+.navFlex {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* .me-auto {
+  float: right;
+}
+
+#headerContent {
+  margin: 0 auto;
+  width: 960px;
+} */
