@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { ListItem } from "..react-bootstrap/ListGroupItem";
-import { Row } from "..react-bootstrap/Row";
-import { Col } from "..react-bootstrap/Col";
-import "./style.css";
+import ListItem from "react-bootstrap/ListGroupItem";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+// import "./style.css";
 
 function JobDetailPage({
   position,
