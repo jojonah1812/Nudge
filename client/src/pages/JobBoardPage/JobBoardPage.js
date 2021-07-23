@@ -1,31 +1,33 @@
 import React, { useEffect, useState } from "react";
-import Jumbotron from "../components/Jumbotron";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
-import Jobs from "../components/Jobs";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Card from "../../components/Card";
+import Footer from "../../components/Footer";
+import Jobs from "../../components/Jobs";
+// import Navbar from "../../components/Navbar";
+// import Hero from "../../components/Hero";
 import API from "../../utils/axios/API";
-import { Col, Row, Container } from "react-bootstrap/Grid";
-import { List } from "../components/List";
+import { Col, Row, Container } from "react-bootstrap";
+import { List } from "../../components/List";
 
-function JobBoardPage() {
+const JobBoardPage = () => {
   const [jobs, setJobs] = useState([]);
-
-  useEffect(() => {
+  function getJobs () {
     API.getJobs()
-      .then((res) =>
-        setJobs({
-          jobs: res.data,
-        })
-      )
-      .catch(() =>
-        setJobs({
-          jobs: [],
-        })
-      );
+      .then((res) => {
+        setJobs(res.data)
+      })
+      // .catch(() =>
+      //   setJobs({
+      //     jobs: [],
+      //   })
+      // );
+      }
+  useEffect(() => {
+  getJobs()
   }, []);
-
+ useEffect(() => {
+   console.log(jobs);
+ }, [jobs]);
   return (
     <Container>
       <Row>
@@ -45,7 +47,7 @@ function JobBoardPage() {
               <List>
                 {jobs.map((job) => (
                   <Jobs
-                    id={job.id}
+                    key={job._id}
                     datePosted={job.datePosted}
                     position={job.position}
                     positionReqLang={job.positionReqLang}

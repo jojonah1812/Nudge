@@ -1,10 +1,9 @@
 import React from "react";
-import { ListItem } from "react-boostrap/ListItem";
-import { Row, Col } from "react-bootstrap/Col";
-import { Row } from "react-bootstrap/Row";
+import { ListItem } from "../List";
+import { Col, Row } from "react-bootstrap";
+
 //import "./style.css";
 function Jobs({
-  id,
   datePosted,
   position,
   positionReqLang,
@@ -15,16 +14,13 @@ function Jobs({
   emailAuthor,
 }) {
   return (
-    <ListItem>
+    <ListItem> 
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
           <h3 className="font-italic">{position}</h3>
         </Col>
       </Row>
       <Row className="results">
-        <Col>
-          <h1>{id}</h1>
-        </Col>
         <Col>
           <h1>{datePosted}</h1>
         </Col>
