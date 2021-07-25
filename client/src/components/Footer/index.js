@@ -4,7 +4,7 @@ import "./style.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer heroBG">
       <div className="titleAndInfo">
         <div className="titleL">
           <h3 >NUDGE</h3>
@@ -37,7 +37,7 @@ const Footer = () => {
 
       <div className="footer-copyright text-center">
         &copy; {new Date().getFullYear()} Copyright:{" "}
-        <a href="https://www.Nudge.com"> Nudge.com </a>
+        <a className="copyLink" href="https://www.Nudge.com"> Nudge.com </a>
       </div>
     </div>
   );

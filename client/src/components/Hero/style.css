@@ -1,7 +1,7 @@
 .hero {
     height: 200px;
     width:100%;
-    max-width: 1000px;
+    max-width: 2000px;
     background-size: cover;
     background-position: center;
     display: block;
@@ -9,24 +9,6 @@
     margin-right: auto;
     }
   
-  /* .hero::after {
-    content: "";
-    display: block;
-    opacity: .4;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: black;
-  } */
-  
-
-/* .hero h1, .hero h2 {
-    color: white;
-  }  
-.hero h1 {
-    font-size: 60px;
-    padding-top: 140px;
-    margin-top: 0;
-  } */
+.heroBG {
+  background-color: rgb(32, 29, 29);
+}
