@@ -41,7 +41,7 @@ const UserProfile = () => {
       const { name, value } = event.target;
       setUsers({...Users, [name]: value})
     };
-    // When the form is submitted, use the API.saveBook method to save the book data
+    // When the form is submitted, use the API.saveUsers method to save the book data
     // Then reload books from the database
     function handleFormSubmit(event) {
       event.preventDefault();
