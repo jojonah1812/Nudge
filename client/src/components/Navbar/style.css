@@ -1,21 +1,20 @@
-/*include react-bootstrap*/
-
 /* .navFlex {
-  
-  
-} */
-
-.navFlex {
   display: flex;
   justify-content: space-between;
   width: 100%;
+} */
+
+
+
+.flex {
+  display:flex;
+  justify-content: space-between;
+}
+/* 
+.nav {
+   float:right;
 }
 
-/* .me-auto {
-  float: right;
-}
-
-#headerContent {
-  margin: 0 auto;
-  width: 960px;
+.brand {
+ float:left;
 } */

@@ -4,7 +4,7 @@ import Image from 'react-bootstrap/Image'
 
 function Hero() {
     return (
-     <Image src="./herob.png"/>
+     <Image className="hero" src="./herob.png"/>
 
      // <div className="hero text-center" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
      //   {props.children}
