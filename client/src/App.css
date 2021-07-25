@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -39,18 +39,19 @@
 
 body {
   height: 100%;
-  overflow: 'scroll';
-  width: 100% !important;
+  overflow-y: scroll;
+  width: 90% !important;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
+  font-family: "Roboto", sans-serif;
+  }
 
 .backRight {
   position: absolute;
   right: 0;
   width: 50%;
   height: 100%;
-  background: #3498db url(https://download.unsplash.com/photo-1429041966141-44d228a42775);
+  background: #3498db
+    url(https://download.unsplash.com/photo-1429041966141-44d228a42775);
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -60,7 +61,8 @@ body {
   left: 0;
   width: 50%;
   height: 100%;
-  background: #e74c3c url(https://download.unsplash.com/photo-1428279148693-1cf2163ed67d);
+  background: #e74c3c
+    url(https://download.unsplash.com/photo-1428279148693-1cf2163ed67d);
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -80,7 +82,7 @@ body {
   margin-left: 50%;
   transition: margin-left 1s;
   position: absolute;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 #slideBox:visited {
@@ -90,7 +92,7 @@ body {
   overflow: hidden;
   margin-left: 0;
   position: absolute;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .topLayer {
@@ -104,7 +106,7 @@ body {
 .left {
   width: 50%;
   height: 100%;
-  background: #2C3034;
+  background: #2c3034;
   left: 0;
   position: absolute;
 }
@@ -127,23 +129,23 @@ body {
 }
 
 .content h2 {
-  color: #03A9F4;
+  color: #03a9f4;
   font-weight: 300;
   font-size: 35px;
 }
 
 button {
-  background: #03A9F4;
+  background: #03a9f4;
   padding: 10px 16px;
   width: auto;
   font-weight: 600;
-  text-transform:  uppercase;
+  text-transform: uppercase;
   font-size: 14px;
   color: #fff;
   line-height: 16px;
   letter-spacing: 0.5px;
   border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   border: 0;
   outline: 0;
   margin: 15px 15px 15px 0;
@@ -151,34 +153,34 @@ button {
 }
 
 button:hover {
-  background: #0288D1;
-  box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+  background: #0288d1;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 .off {
   background: none;
-  color: #03A9F4;
+  color: #03a9f4;
   box-shadow: none;
 }
 
 .right .off:hover {
   background: #eee;
-  color: #03A9F4;
+  color: #03a9f4;
   box-shadow: none;
 }
 
 .left .off:hover {
   box-shadow: none;
-  color: #03A9F4;
-  background: #363A3D;
+  color: #03a9f4;
+  background: #363a3d;
 }
 
 input {
   background: transparent;
   border: 0;
   outline: 0;
-  border-bottom: 1px solid #45494C;
+  border-bottom: 1px solid #45494c;
   font-size: 14px;
   color: #959595;
   padding: 8px 0;
   margin-top: 20px;
-}
+} */
