@@ -3,18 +3,41 @@
     max-width: 100%;
     width: 100%;
     padding: 10px;
+    color: black;
     
 }
 
 .titleAndInfo {
-    display:flex;
+   display: flex;
+   flex-wrap: wrap;
+   font-size: 20px;
+   text-align: left;
 
 }
 
-.title {
+.titleL {
+   padding: 10px;
+   flex: 70%;
+   flex-direction: column;
 
+}
+
+.titleC {
+   padding: 10px;
+   flex: 10%;
+  
+}
+
+.titleR {
+   padding: 10px;
+   flex: 20%;
+}
+
+a {
+     color: black;
 }
 
 .list {
-
+    list-style-type: none;
 }
+

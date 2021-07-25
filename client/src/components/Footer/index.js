@@ -6,28 +6,33 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="titleAndInfo">
-        <h5 className="title">NUDGE</h5>
-        <p>Nudge your way to your new career!</p>
+        <div className="titleL">
+          <h3 >NUDGE</h3>
+          <p>Nudge your way to your new career!</p>
+        </div>
 
-        <h5 className="title">About Us</h5>
-        <ul>
-          <li className="list">
-            <a href="#!">Mission Statement</a>
-          </li>
-          <li className="list">
-            <a href="#!">Corporate Offices</a>
-          </li>
-        </ul>
-
-        <h5 className="title">Contact Us</h5>
-        <ul>
-          <li className="list">
-            <a href="#!">Email</a>
-          </li>
-          <li className="list">
-            <a href="#!">Twitter</a>
-          </li>
-        </ul>
+        <div className="titleC">
+          <h5 >About Us</h5>
+          <ul>
+            <li className="list">
+              <a href="#!">Mission Statement</a>
+            </li>
+            <li className="list">
+              <a href="#!">Corporate Offices</a>
+            </li>
+          </ul>
+        </div>
+        <div className="titleR">
+          <h5 >Contact Us</h5>
+          <ul>
+            <li className="list">
+              <a href="#!">Email</a>
+            </li>
+            <li className="list">
+              <a href="#!">Twitter</a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="footer-copyright text-center">
