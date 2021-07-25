@@ -1,16 +1,20 @@
 /*import react-bootstrap code*/
-footer {
+.footer {
     max-width: 100%;
     width: 100%;
     padding: 10px;
+    
 }
 
-.title{
+.titleAndInfo {
+    display:flex;
 
 }
 
-.listItems {
-color: blueviolet;
-    list-style-type: none;
-    color:rgb(189, 18, 103) ;
+.title {
+
+}
+
+.list {
+
 }
