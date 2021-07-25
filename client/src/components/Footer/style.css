@@ -3,7 +3,7 @@
     max-width: 100%;
     width: 100%;
     padding: 10px;
-    color: black;
+    color: rgb(250, 246, 246);
     
 }
 
@@ -12,32 +12,40 @@
    flex-wrap: wrap;
    font-size: 20px;
    text-align: left;
+   padding: 20px;
 
 }
 
 .titleL {
    padding: 10px;
-   flex: 70%;
+   flex: 30%;
    flex-direction: column;
 
 }
 
 .titleC {
-   padding: 10px;
+   /* padding: 10px; */
    flex: 10%;
   
 }
 
 .titleR {
-   padding: 10px;
+   /* padding: 10px; */
    flex: 20%;
 }
 
 a {
-     color: black;
+     color: rgb(250, 246, 246);
 }
 
 .list {
     list-style-type: none;
 }
 
+.footer-copyright {
+   color:rgb(119, 126, 126)
+}
+
+.copyLink {
+   color:rgb(119, 126, 126)
+}
