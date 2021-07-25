@@ -6,6 +6,7 @@ import { Col, Row } from "react-bootstrap";
 function Jobs({
   datePosted,
   position,
+  positionDesc,
   positionReqLang,
   positionReqTech,
   positionReqExp,
@@ -23,6 +24,9 @@ function Jobs({
       <Row className="results">
         <Col>
           <h1>{datePosted}</h1>
+        </Col>
+        <Col>
+          <h1>{positionDesc}</h1>
         </Col>
         <Col>
           <h1>{positionReqLang}</h1>

@@ -12,8 +12,11 @@ const jobsSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-
   position: {
+    type: String,
+    required: true,
+  },
+  positionDesc: {
     type: String,
     required: true,
   },
@@ -33,7 +36,6 @@ const jobsSchema = new Schema({
     type: String,
     required: true,
   },
-
   nameAuthor: {
     type: String,
     required: true,

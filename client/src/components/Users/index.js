@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.css";
 import Form from 'react-bootstrap/Form';
+import { Col, Row, Container } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 function Signup() {
   return (
