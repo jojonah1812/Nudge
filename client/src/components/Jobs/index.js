@@ -2,7 +2,8 @@ import React from "react";
 import { ListItem } from "../List";
 import { Col, Row } from "react-bootstrap";
 
-//import "./style.css";
+
+import "./style.css";
 function Jobs({
   datePosted,
   position,
@@ -17,23 +18,43 @@ function Jobs({
     <ListItem>
       <Row>
         <Col>
-          <h3 className="font-italic">{position}</h3>
+          <h3 className="position"> {position}</h3>
         </Col>
       </Row>
       <Row>
         <Col>
-          <p>Date Posted: {datePosted}</p>
-          <p>Languages Req'd: {positionReqLang}</p>
+          <div className="padDetails1">
+            <p>
+              <strong>Date Posted:</strong> {datePosted}
+            </p>
+            <p>
+              <strong>Languages Req'd:</strong> {positionReqLang}
+            </p>
+          </div>
         </Col>
         <Col>
-          <p>Technical Skills Req'd: {positionReqTech}</p>
-          <p>Experience Req'd: {positionReqExp}</p>
+          <div className="padDetails2">
+            <p>
+              <strong>Technical Skills Req'd:</strong> {positionReqTech}
+            </p>
+            <p>
+              <strong>Experience Req'd:</strong> {positionReqExp}
+            </p>
+          </div>
         </Col>
 
         <Col>
-          <p>Salary Range: {salaryRange}</p>
-          <p>Company Rep: {nameAuthor}</p>
-          <p>Rep Contact Info: {emailAuthor}</p>
+          <div className="padDetails3">
+            <p>
+              <strong>Salary Range:</strong> {salaryRange}
+            </p>
+            <p>
+              <strong>Company Rep:</strong> {nameAuthor}
+            </p>
+            <p>
+              <strong>Rep Contact Info:</strong> {emailAuthor}
+            </p>
+          </div>
         </Col>
         {/* <Col></Col> */}
       </Row>
