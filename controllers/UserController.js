@@ -12,7 +12,7 @@ module.exports = {
                 return res.status(400).send("Please fill out all fields");
             }
             // testing for doubles
-            User.findOne({$or: [{email}, {username}]}).then(user => {
+            User.findOne({$or: [{email}, {name}]}).then(user => {
                 if(user === null) {
                     User.create(req.body)
                     return res.status(200).json('User created');
@@ -22,13 +22,14 @@ module.exports = {
                     return res.status(400).send("Email already exists. Please use a different email.");
                 };
 
-                if (username === user.username) {
+                if (name === user.name) {
                     return res.status(400).send("Username already exists. Please use a different username.");
                 };
 
             })
 
         } catch (err) {
+            console.log(err)
             return res.status(500).json("Server error, cannot signup");
         }
     },
