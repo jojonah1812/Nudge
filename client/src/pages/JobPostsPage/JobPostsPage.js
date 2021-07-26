@@ -57,7 +57,7 @@ console.log(jobs);
         positionReqExp: posts.positionReqExp,
         salaryRange: posts.salaryRange,
         nameAuthor: posts.nameAuthor,
-        emailAuthor: postMessage.emailAuthor
+        emailAuthor: posts.emailAuthor
       })
 
         .then(res => loadJobs())
