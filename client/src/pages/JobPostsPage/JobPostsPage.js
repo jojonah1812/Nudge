@@ -1,41 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
-import Input from "react-bootstrap/Form";
-//import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Posts from "../../components/Posts";
+//import Posts from "../../components/Posts";
 import API from "../../utils/axios/API";
 import { Col, Row, Container } from "react-bootstrap";
-//import { List } from "../../components/List";
-
+import { TextArea, Input, FormBtn} from "../../components/Form";
 
 const JobPosts = () => {
   // Setting our component's initial state
-  const [jobs, setJobs] = useState([])
-  const [posts, setPosts] = useState({})
+   const [posts, setPosts] = useState({})
 
-  // Load all jobs and store them with setJobs
-  useEffect(() => {
-    loadJobs()
-  }, [])
-  useEffect(() => {
-console.log(jobs);
-}, [jobs]);
-
-  // Loads all jobs and sets them to jobs
-  function loadJobs() {
-    API.getJobs()
-      .then(res =>
-        setJobs(res.data)
-      )
-      .catch(err => console.log(err));
-  }
-  // Deletes a job from the database with a given id, then reloads jos from the db
-  function deleteJob(id) {
-    API.deleteJob(id)
-       .then(res => loadJobs())
-       .catch(err => console.log(err));
-    }
+  
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -47,7 +21,7 @@ console.log(jobs);
     event.preventDefault();
     if (posts.position && posts.datePosted && posts.positionDesc && posts.positionReqLang
       && posts.positionReqTech && posts.positionReqExp && posts.salaryRange && posts.nameAuthor
-     && posts.emailAuthor) {
+      && posts.emailAuthor) {
       API.saveJob({
         position: posts.position,
         datePosted: posts.datePosted,
@@ -59,8 +33,7 @@ console.log(jobs);
         nameAuthor: posts.nameAuthor,
         emailAuthor: posts.emailAuthor
       })
-
-        .then(res => loadJobs())
+        .then(console.log(posts))
         .catch(err => console.log(err));
     }
   };
@@ -82,7 +55,7 @@ console.log(jobs);
               name="datePosted,"
               placeholder="Date Posted (required)"
             />
-            <Input
+            <TextArea
               onChange={handleInputChange}
               name="positionDesc"
               placeholder="Position Description(required)"
@@ -117,24 +90,12 @@ console.log(jobs);
               name="nameEmail"
               placeholder="Author of Job Post (required)"
             />
-            <Button
-              disabled={!(posts.position && posts.positionDesc && posts.positionReqLang
-                && posts.positionReqTech && posts.positionReqExp && posts.salaryRange 
-                && posts.nameAuthor
-                && Posts.emailAuthor)}
-              onClick={handleFormSubmit}
+            <FormBtn
+             onClick={handleFormSubmit}
             >
               Submit 
-            </Button>
-            <Button
-              disabled={!(posts.position && posts.positionDesc && posts.positionReqLang
-                && posts.positionReqTech && posts.positionReqExp && posts.salaryRange 
-                && posts.nameAuthor
-                && posts.emailAuthor)}
-              onClick={handleFormSubmit}
-            >
-              Delete 
-            </Button>
+            </FormBtn>
+          
           </div>
         </Col>
       </Row>
