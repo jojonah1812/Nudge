@@ -12,7 +12,7 @@ import { List } from "../../components/List";
 const UserProfileList = () => {
   const [users, setUsers] = useState([]);
   function getUsers () {
-    API.getJobs()
+    API.getUsers()
       .then((res) => {
         setUsers(res.data)
       })
@@ -36,7 +36,7 @@ const UserProfileList = () => {
             <h1 className="text-center">
               <strong>Nudge User Profile</strong>
             </h1>
-            <h2 className="text-center">Search for jobs.</h2>
+            <h2 className="text-center">View Your User Profile Page</h2>
           </Jumbotron>
         </Col>
       </Row>
@@ -76,7 +76,7 @@ const UserProfileList = () => {
           </Card>
         </Col> 
       </Row>
-      <Footer/>
+      <Footer />
     </Container>
   );
 }

@@ -12,23 +12,11 @@ function Users() {
     <div>
 
       <InputGroup className="mb-3">
-        <InputGroup.Checkbox aria-label="eCheckbox for following text input" />
-        <FormControl aria-label="Employer" />
+        <InputGroup.Checkbox aria-label="eCheckbox for following text input"/>
+        <FormControl aria-label="Employer"/>
       </InputGroup>
 
-      <InputGroup size="sm" className="mb-3">
-        <InputGroup.Text id="inputGroup-sizing-sm">Small</InputGroup.Text>
-        <FormControl aria-label="Small" aria-describedby="inputGroup-sizing-sm" />
-      </InputGroup>
-      <br />
-
-      {/*<InputGroup className="mb-3">
-        <InputGroup.Text>First and last name</InputGroup.Text>
-        <FormControl aria-label="First name" />
-        <FormControl aria-label="Last name" />
-      </InputGroup>
-  */}
-
+      
       <Row className="mb-3">
         <Form.Group as={Col} controlId="formGridName">
           <Form.Label>Name</Form.Label>

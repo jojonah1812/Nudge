@@ -3,7 +3,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Input from "react-bootstrap/Form";
 //import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Users from "../../components/Users";
+import Users from "../../components/UserProfileForm";
 import API from "../../utils/axios/API";
 import { Col, Row, Container, InputGroup } from "react-bootstrap";
 
@@ -174,7 +174,7 @@ const UserProfile = () => {
               placeholder="Posted Jobs(required)"
             />
           
-            />
+           
             <Button
               disabled={!(users.employer && users.name && users.email && users.password
                 && users.phone && users.city && users.state && users.zipcode && users.startDate && users.salaryRange
