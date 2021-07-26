@@ -7,12 +7,12 @@ const Footer = () => {
     <div className="footer heroBG">
       <div className="titleAndInfo">
         <div className="titleL">
-          <h3 >NUDGE</h3>
+          <h3>NUDGE</h3>
           <p>Nudge your way to your new career!</p>
         </div>
 
         <div className="titleC">
-          <h5 >About Us</h5>
+          <h5>About Us</h5>
           <ul>
             <li className="list">
               <a href="#!">Mission Statement</a>
@@ -23,7 +23,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="titleR">
-          <h5 >Contact Us</h5>
+          <h5>Contact Us</h5>
           <ul>
             <li className="list">
               <a href="#!">Email</a>
@@ -37,10 +37,13 @@ const Footer = () => {
 
       <div className="footer-copyright text-center">
         &copy; {new Date().getFullYear()} Copyright:{" "}
-        <a className="copyLink" href="https://www.Nudge.com"> Nudge.com </a>
+        <a className="copyLink" href="https://www.Nudge.com">
+          {" "}
+          Nudge.com{" "}
+        </a>
       </div>
     </div>
   );
-}
+};
 
 export default Footer;
