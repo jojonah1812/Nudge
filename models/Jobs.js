@@ -9,8 +9,9 @@ const jobsSchema = new Schema({
   //   required: true,
   // },
   datePosted: {
-    type: String,
-    required: true,
+    type: Date,
+    //required: true,
+    default: () => new Date(),
   },
   position: {
     type: String,

@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const userRoutes = require("../api/user");
-const jobRoutes = require("../api/jobs");
+const userRoutes = require("./user");
+const jobRoutes = require("./jobs");
 const isUserAuthenticated = require("../../middleware/isAuthenticated");
 
 router.use("/users", userRoutes);

@@ -2,29 +2,29 @@ import React, { useState, useEffect } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 //import Posts from "../../components/Posts";
 import API from "../../utils/axios/API";
-import { Col, Row, Container } from "react-bootstrap";
-import { TextArea, Input, FormBtn} from "../../components/Form";
+import { Col, Row, Container, Button } from "react-bootstrap";
+import { TextArea, Input } from "../../components/Form";
 
 const JobPosts = () => {
   // Setting our component's initial state
-   const [posts, setPosts] = useState({})
+  const [posts, setPosts] = useState({})
 
-  
+
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setPosts({...posts, [name]: value })
+    setPosts({ ...posts, [name]: value })
   };
   // When the form is submitted, use the API.saveJob method to save the job data
   // Then reload jobs from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (posts.position && posts.datePosted && posts.positionDesc && posts.positionReqLang
-      && posts.positionReqTech && posts.positionReqExp && posts.salaryRange && posts.nameAuthor
-      && posts.emailAuthor) {
+    //if (posts.position && posts.positionDesc && posts.positionReqLang
+    //  && posts.positionReqTech && posts.positionReqExp && posts.salaryRange && posts.nameAuthor
+    //  && posts.emailAuthor) {
+        console.log("Hello")
       API.saveJob({
         position: posts.position,
-        datePosted: posts.datePosted,
         positionDesc: posts.positionDesc,
         positionReqLang: posts.positionReqLang,
         positionReqTech: posts.positionReqTech,
@@ -33,27 +33,25 @@ const JobPosts = () => {
         nameAuthor: posts.nameAuthor,
         emailAuthor: posts.emailAuthor
       })
-        .then(console.log(posts))
+        .then(res => console.log(res))
         .catch(err => console.log(err));
-    }
+ //   }
   };
-    return (
+  useEffect(() => {
+    console.log(posts);
+  }, [handleFormSubmit]);
+  return (
     <Container fluid>
       <Row>
         <Col size="md-6">
           <Jumbotron>
             <h1>OPEN POSITIONS</h1>
           </Jumbotron>
-          <div>
+          <form onSubmit={handleFormSubmit}>
             <Input
               onChange={handleInputChange}
               name="position"
               placeholder="Position (required)"
-            />
-            <Input
-              onChange={handleInputChange}
-              name="datePosted,"
-              placeholder="Date Posted (required)"
             />
             <TextArea
               onChange={handleInputChange}
@@ -88,15 +86,14 @@ const JobPosts = () => {
             <Input
               onChange={handleInputChange}
               name="nameEmail"
-              placeholder="Author of Job Post (required)"
+              placeholder="Email of Author of Job Post (required)"
             />
-            <FormBtn
-             onClick={handleFormSubmit}
+            <Button type="submit"
+              onClick={handleFormSubmit}
             >
-              Submit 
-            </FormBtn>
-          
-          </div>
+              Submit
+            </Button>
+          </form>
         </Col>
       </Row>
     </Container>
