@@ -10,7 +10,7 @@ class JobPostsPage extends Component {
           <div>
             <div className="cardTitle">POST A JOB</div>
 
-            <Form className="card">
+            <Form className="cardA">
               <Form.Group className="mb-3" controlId="formGridPosition">
                 <Form.Label>Position</Form.Label>
                 <Form.Control placeholder="Position name" />

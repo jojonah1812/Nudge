@@ -10,7 +10,7 @@ class UserProfile extends Component {
         return (
           <div>
             <div className="cardTitle">USER PROFILE</div>
-            <Form className="card">
+            <Form className="cardA">
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
                   <Form.Label>Email</Form.Label>

@@ -1,3 +1,7 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 body {
   height: 100%;
   overflow-y: scroll;
@@ -9,7 +13,7 @@ body {
   margin-right: auto;
   }
 
-.card {
+.cardA {
   margin: 20px;
   background-color: rgb(64, 160, 197);
   text-align: left;
@@ -18,11 +22,22 @@ body {
 
 .cardTitle {
   text-align: center;
-  margin: 30px 30px 50px;
+  max-width:100%;
+  display: block;
+ 
+  margin: 50px auto 50px auto;
+  color:#eceaea;
   border: black 1px;
   border-style: solid;
   font-size: xx-large;
-  background-color: rgb(99, 28, 46);
+  background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+
   
   
 }
