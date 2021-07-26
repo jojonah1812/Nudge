@@ -1,8 +1,51 @@
 /*import react-bootstrap code*/
-footer {
-    position: absolute;
-    bottom: 0;
+.footer {
     max-width: 100%;
     width: 100%;
     padding: 10px;
+    color: rgb(250, 246, 246);
+    
+}
+
+.titleAndInfo {
+   display: flex;
+   flex-wrap: wrap;
+   font-size: 20px;
+   text-align: left;
+   padding: 20px;
+
+}
+
+.titleL {
+   padding: 10px;
+   flex: 30%;
+   flex-direction: column;
+
+}
+
+.titleC {
+   /* padding: 10px; */
+   flex: 10%;
+  
+}
+
+.titleR {
+   /* padding: 10px; */
+   flex: 20%;
+}
+
+a {
+     color: rgb(250, 246, 246);
+}
+
+.list {
+    list-style-type: none;
+}
+
+.footer-copyright {
+   color:rgb(119, 126, 126)
+}
+
+.copyLink {
+   color:rgb(119, 126, 126)
 }

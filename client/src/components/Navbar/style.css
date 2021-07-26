@@ -1,21 +1,11 @@
-/*include react-bootstrap*/
+.navStyle {
+  color: white;
+  background-color: black;
+}
 
-/* .navFlex {
-  
-  
-} */
-
-.navFlex {
-  display: flex;
+.flex {
+  display:flex;
   justify-content: space-between;
-  width: 100%;
-}
 
-/* .me-auto {
-  float: right;
-}
 
-#headerContent {
-  margin: 0 auto;
-  width: 960px;
-} */
+}
