@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Input from "react-bootstrap/Form";
-import Form from "react-bootstrap/Form";
+//import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Users from "../../components/Users";
 import API from "../../utils/axios/API";
@@ -16,10 +16,11 @@ const UserProfile = () => {
     // Load all jobs and store them with setJobs
     useEffect(() => {
       loadUsers()
-      }, []);
-    useEffect(() => {
-      console.log(users);
-    }, [users])
+      }, [])
+   useEffect(() => {
+     console.log(users);
+     }, [users]);
+
     // Loads all jobs and sets them to jobs
     function loadUsers() {
       API.getUsers()
@@ -27,50 +28,49 @@ const UserProfile = () => {
           setUsers(res.data)
         )
         .catch(err => console.log(err));
-    };
-    {/*
+    }
+    
     // Deletes a book from the database with a given id, then reloads books from the db
     function deleteJob(id) {
-      API.deleteJob(id)
-        .then(res => loadJobs())
-        .catch(err => console.log(err));
-    }
-*/}
+     API.deleteJob(id)
+        .then(res => loadUsers())
+       .catch(err => console.log(err));
+   }
+
     // Handles updating component state when the user types into the input field
     function handleInputChange(event) {
       const { name, value } = event.target;
-      setUsers({...Users, [name]: value})
+      setUsers({...users, [name]: value})
     };
     // When the form is submitted, use the API.saveUsers method to save the book data
     // Then reload books from the database
     function handleFormSubmit(event) {
       event.preventDefault();
-      if (Users.employer && Users.name && Users.email && Users.password
-        && Users.phone && Users.city && Users.state && Users.zipcode && users.startDate && Users.salaryRange &&
-        Users.typeOfWork && Users.experienceLevel && Users.technicalEdu && Users.school && Users.skillset 
-        && Users.company && Users. companyDesc && Users.postedJobs) {
+      if (users.employer && users.name && users.email && users.password
+        && users.phone && users.city && users.state && users.zipcode && users.startDate && users.salaryRange 
+        && users.typeOfWork && users.experienceLevel && users.technicalEdu && users.school && users.skillset 
+        && users.company && users.companyDesc && users.postedJobs) {
         API.saveUser({
-          employer: Users.employer,
-          name: Users.name,
-          email: Users.email,
-          password:Users.password,
-          phone: Users.phone,
-          city: Users.city,
-          state: Users.state,
-          zipcode: Users.zipcode, 
-          startDate: Users.startDate, 
-          salaryRange:Users.salaryRange,
-          typeOfWork: Users.typeOfWork,
-          experienceLevel: Users.experienceLevel,
-          technicalEdu: Users.technicalEdu,
-          school: Users.school, 
-          skillset: Users.skillset, 
-          company: Users.company,
-          companyDesc: Users.companyDesc,
-          postedJobs: Users.postedJobs,
-
+          employer: users.employer,
+          name: users.name,
+          email: users.email,
+          password:users.password,
+          phone: users.phone,
+          city: users.city,
+          state: users.state,
+          zipcode: users.zipcode, 
+          startDate: users.startDate, 
+          salaryRange: users.salaryRange,
+          typeOfWork: users.typeOfWork,
+          experienceLevel: users.experienceLevel,
+          technicalEdu: users.technicalEdu,
+          school: users.school, 
+          skillset: users.skillset, 
+          company: users.company,
+          companyDesc: users.companyDesc,
+          postedJobs: users.postedJobs,
         })
-            
+          
         .then(res => loadUsers())
           .catch(err => console.log(err));
       }
@@ -82,7 +82,7 @@ const UserProfile = () => {
               <Jumbotron>
                 <h1>USER PROFILE</h1>
             </Jumbotron>
-              <Form>
+              <div>
                 <Input
                   onChange={handleInputChange}
                   name="employer"
@@ -189,18 +189,24 @@ const UserProfile = () => {
                   placeholder="State (required)"
                 />
                 <Button
-                  disabled={!(users.name && users.email)}
+                  disabled={!(users.name && users.email && users.password
+                    && users.phone && users.city && users.state && users.zipcode && users.startDate && users.salaryRange 
+                    && users.typeOfWork && users.experienceLevel && users.technicalEdu && users.school && users.skillset 
+                    && users.company && users.companyDesc && users.postedJobs)}
                   onClick={handleFormSubmit}
                 >
-                  Submit Job
+                  Submit 
                 </Button>
                 <Button
-                  disabled={!(users.name && users.email)}
+                  disabled={!(users.name && users.email && users.password
+                    && users.phone && users.city && users.state && users.zipcode && users.startDate && users.salaryRange 
+                    && users.typeOfWork && users.experienceLevel && users.technicalEdu && users.school && users.skillset 
+                    && users.company && users.companyDesc && users.postedJobs)}
                   onClick={handleFormSubmit}
                 >
-                  Edit
+                  Edit 
                 </Button>
-              </Form>
+              </div>
             </Col>
           </Row>
         </Container>

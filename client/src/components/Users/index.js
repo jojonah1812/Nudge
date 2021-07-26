@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 import Form from 'react-bootstrap/Form';
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
-function Signup() {
+function Users() {
   return (
     
-   <div className="signup">
+   <div className="users">
 
 <Form>
   <Row className="mb-3">
@@ -91,4 +91,4 @@ function Signup() {
 
   )};
 
-export default Signup;
+export default Users;
