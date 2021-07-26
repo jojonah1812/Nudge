@@ -3,13 +3,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "./LandingPage.css";
 
 class LandingPage extends Component {
   render() {
     return (
       <div>
         <div>
-          <div className="cardTitle">Log In</div>
+          <div className="cardTitle logIn">Log In</div>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>

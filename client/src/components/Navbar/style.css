@@ -1,6 +1,7 @@
 .navStyle {
   color: white;
   background-color: black;
+  max-width:100%;
 }
 
 .flex {
