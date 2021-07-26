@@ -89,7 +89,7 @@ const userSchema = new Schema({
     type: String,
   },
   postedJobs: {
-    // ????????????
+    type: String,
   },
 });
 

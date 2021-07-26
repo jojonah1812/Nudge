@@ -34,7 +34,7 @@ const JobBoardPage = () => {
         <Col size="md-12">
           <Jumbotron>
             <h1 className="text-center">
-              <strong>Job Board </strong>
+              <strong>Nudge Job Board</strong>
             </h1>
             <h3 className="text-center">Search for jobs.</h3>
           </Jumbotron>

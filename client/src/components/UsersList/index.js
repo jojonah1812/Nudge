@@ -5,7 +5,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListItem from "react-bootstrap/ListGroupItem";
 
-//User Profile List Page Component
 
 function Userlists({
     employer,

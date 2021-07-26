@@ -1,86 +1,86 @@
-import React, { Component } from "react";
-// import { ListItem } from "../List";
-// import { Row, Col } from "../../Grid";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import ListItem from "react-bootstrap/ListGroupItem";
-import Button from "react-bootstrap/Button";
+import React, { useEffect, useState } from "react";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Card from "../../components/Card";
+import Footer from "../../components/Footer";
+import Userslist from "../../components/UsersList";
+// import Navbar from "../../components/Navbar";
+// import Hero from "../../components/Hero";
+import API from "../../utils/axios/API";
+import { Col, Row, Container } from "react-bootstrap";
+import { List } from "../../components/List";
+//User Profile List Page
+const UserProfileList = () => {
+  const [users, setUsers] = useState([]);
+  function getUsers () {
+    API.getUsers()
+      .then((res) => {
+        setUsers(res.data)
+      })
+      // .catch(() =>
+      //   setJobs({
+      //     jobs: [],
+      //   })
+      // );
+      }
+  useEffect(() => {
+  getUsers()
+  }, []);
+ useEffect(() => {
+   console.log(users);
+ }, [users]);
+  return (
+    <Container>
+      <Row>
+        <Col size="md-12">
+          <Jumbotron>
+            <h1 className="text-center">
+              <strong>Nudge User Profile</strong>
+            </h1>
+            <h2 className="text-center">View Your User Profile Page</h2>
+          </Jumbotron>
+        </Col>
+      </Row>
+      <Row>
+        <Col size="md-12">
+          <Card title="Results">
+           {users.length ? (
+              <List>
+                {users.map((user) => (
+                  <Userslist
+                    key={user._id}
+                    employer={user.employer}
+                    name={user.name}
+                    password={user.password}
+                    phone={user.phone}
+                    city={user.city}
+                    state={user.state}
+                    zipcode={user.zipcode}
+                    startDate={user.startDate }
+                    salaryRange={user.salaryRange}
+                    typeOfWork={user.typeOfWork}
+                    experienceLevel={user.experienceLevel}
+                    technicalEdu={user.technicalEdu}
+                    school={user.school}
+                    skillset={user.skillsetl}
+                    company={user.company}
+                    companyDesc={user.companyDesc}
+                    postedJobs={user.postedJobs}
+                  />
+                ))}
+              </List>
+            ) : (
+              <h2 className="text-center">
+                No New Users Found, Try a Different Query
+              </h2>
+            )}
+          </Card>
+        </Col> 
+      </Row>
+      <Footer />
+    </Container>
+  );
+}
 
 
- function UserProfileList({ position, date_posted, position_id, description, languages, technologies, experience, salary, author }) {
-    return (
-      <div>
-        <ListItem>
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Position</h3>
-              <h4 className="font-italic">{position}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Date Posted</h3>
-              <h4 className="font-italic">{date_posted}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Position ID</h3>
-              <h4 className="font-italic">{position_id}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Description</h3>
-              <h4 className="font-italic">{description}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Languages</h3>
-              <h4 className="font-italic">{languages}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Technologies</h3>
-              <h4 className="font-italic">{technologies}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Experience</h3>
-              <h4 className="font-italic">{experience}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Salary</h3>
-              <h4 className="font-italic">{salary}</h4>
-            </Col>
-          </Row>
-
-          <Row className="flex-wrap-reverse">
-            <Col size="md-8">
-              <h3>Author</h3>
-              <h4 className="font-italic">{author}</h4>
-            </Col>
-          </Row>
-        </ListItem>
-        <Button variant="primary" type="edit">
-            Edit
-        </Button>
-      </div>
-    );
-    }
-    
- 
 
 export default UserProfileList;
