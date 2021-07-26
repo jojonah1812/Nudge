@@ -14,34 +14,28 @@ function Jobs({
   emailAuthor,
 }) {
   return (
-    <ListItem> 
-      <Row className="flex-wrap-reverse">
-        <Col size="md-8">
+    <ListItem>
+      <Row>
+        <Col>
           <h3 className="font-italic">{position}</h3>
         </Col>
       </Row>
-      <Row className="results">
+      <Row>
         <Col>
-          <h1>{datePosted}</h1>
+          <p>Date Posted: {datePosted}</p>
+          <p>Languages Req'd: {positionReqLang}</p>
         </Col>
         <Col>
-          <h1>{positionReqLang}</h1>
+          <p>Technical Skills Req'd: {positionReqTech}</p>
+          <p>Experience Req'd: {positionReqExp}</p>
         </Col>
+
         <Col>
-          <h1>{positionReqTech}</h1>
+          <p>Salary Range: {salaryRange}</p>
+          <p>Company Rep: {nameAuthor}</p>
+          <p>Rep Contact Info: {emailAuthor}</p>
         </Col>
-        <Col>
-          <h1>{positionReqExp}</h1>
-        </Col>
-        <Col>
-          <h1>{salaryRange}</h1>
-        </Col>
-        <Col>
-          <h1>{nameAuthor}</h1>
-        </Col>
-        <Col>
-          <h1>{emailAuthor}</h1>
-        </Col>
+        {/* <Col></Col> */}
       </Row>
     </ListItem>
   );

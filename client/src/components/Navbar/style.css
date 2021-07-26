@@ -1,20 +1,11 @@
-/* .navFlex {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-} */
-
-
+.navStyle {
+  color: white;
+  background-color: black;
+}
 
 .flex {
   display:flex;
   justify-content: space-between;
-}
-/* 
-.nav {
-   float:right;
-}
 
-.brand {
- float:left;
-} */
+
+}

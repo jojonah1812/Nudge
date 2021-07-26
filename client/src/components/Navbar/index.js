@@ -7,7 +7,7 @@ import {Navbar, Nav, Container} from 'react-bootstrap';
 function HeaderNav() {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="navStyle" bg="light" expand="lg">
         <Container className="flex">
           <Navbar.Brand className="brand" href="#home">NUDGE</Navbar.Brand>
           <Navbar.Toggle aria-controls />

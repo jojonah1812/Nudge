@@ -85,9 +85,9 @@ const User = () => {
     Submit
   </Button>
 
-  <Button variant="primary" type="edit">
+  {/* <Button variant="primary" type="edit">
    Edit
-  </Button>
+  </Button> */}
 </Form>
 
 </div>
