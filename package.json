@@ -34,6 +34,8 @@
     "express": "^4.17.1",
     "express-sessions": "^1.0.1",
     "if-env": "^1.0.4",
+    "inquire": "^0.4.8",
+    "inquirer": "^8.1.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.9",
     "passport": "^0.4.1",
