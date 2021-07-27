@@ -8,8 +8,12 @@ class UserProfile extends Component {
 
     render() {
         return (
-          <div>
-            <div className="cardTitle">USER PROFILE</div>
+          <div className="flexA">
+            <div className="userProfPic">
+              <img src="userProfMVP.png"></img>
+            </div>
+
+            {/* <div className="cardTitle">USER PROFILE</div>
             <Form className="cardA">
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
@@ -90,16 +94,21 @@ class UserProfile extends Component {
                 Submit
               </Button>
 
-              {/* <Button variant="primary" type="edit">
-            Edit
-            </Button> */}
-            </Form>
+              
+            </Form> */}
           </div>
         );
-         
     }
-
-    };     
+};     
     
     
     export default UserProfile;
+
+
+
+
+    {
+      /* <Button variant="primary" type="edit">
+            Edit
+            </Button> */
+    }
