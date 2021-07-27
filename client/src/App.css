@@ -5,7 +5,7 @@
 body {
   height: 100%;
   overflow-y: scroll;
-  width: 90% !important;
+  width: 90%;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   background-color: rgb(64, 160, 197);
