@@ -88,7 +88,7 @@ const JobPosts = () => {
               />
               <Input
                 onChange={handleInputChange}
-                name="nameEmail"
+                name="emailAuthor"
                 placeholder="Email of Author of Job Post (required)"
               />
               <Button type="submit" onClick={handleFormSubmit}>
