@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 // import { ListItem } from "../List";
 // import { Row, Col } from "../../Grid";
 import Row from "react-bootstrap/Row";
