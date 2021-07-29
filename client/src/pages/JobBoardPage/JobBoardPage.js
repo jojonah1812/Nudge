@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Card from "../../components/Card";
-import Footer from "../../components/Footer";
 import Jobs from "../../components/Jobs";
-// import Navbar from "../../components/Navbar";
-// import Hero from "../../components/Hero";
 import API from "../../utils/axios/API";
 import { Col, Row, Container } from "react-bootstrap";
 import { List } from "../../components/List";
@@ -30,7 +27,7 @@ const JobBoardPage = () => {
  }, [jobs]);
   return (
     <Container>
-      <Row>
+      {/* <Row>
         <Col size="md-12">
           <Jumbotron>
             <h1 className="text-center">
@@ -39,7 +36,8 @@ const JobBoardPage = () => {
             <h3 className="text-center">Search for jobs.</h3>
           </Jumbotron>
         </Col>
-      </Row>
+      </Row> */}
+      <div className="cardTitle">JOB BOARD</div>
       <Row>
         <Col size="md-12">
           <Card title="Results">

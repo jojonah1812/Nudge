@@ -15,7 +15,7 @@ module.exports = {
             User.findOne({$or: [{email}, {name}]}).then(user => {
                 if(user === null) {
                     User.create(req.body)
-                    return res.status(200).json('User created');
+                      return res.status(200).json('User created');
                 };
 
                 if(email === user.email) {
