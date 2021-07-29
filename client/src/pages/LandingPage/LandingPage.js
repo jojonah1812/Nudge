@@ -46,7 +46,7 @@ class LandingPage extends Component {
 
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridName">
-              <Form.Label>Email</Form.Label>
+              <Form.Label>Name</Form.Label>
               <Form.Control type="text" placeholder="First and Last Name" />
             </Form.Group>
 
