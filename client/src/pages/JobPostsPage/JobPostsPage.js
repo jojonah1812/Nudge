@@ -32,15 +32,16 @@ const JobPosts = () => {
       positionReqExp: posts.positionReqExp,
       salaryRange: posts.salaryRange,
       nameAuthor: posts.nameAuthor,
-      emailAuthor: posts.emailAuthor,
+      emailAuthor: posts.emailAuthor
     })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-    //   }
-  }
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
+      }
+ // }
+  //useEffect(() => {
+  //  console.log(posts);
+ // }, [posts]);
+
   return (
     <Container fluid>
       <Row>
