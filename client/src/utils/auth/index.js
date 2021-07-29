@@ -13,15 +13,15 @@ const initalAuthState = {
 
 const defaultAuthValue = {
     ...initalAuthState,
-    login: () => {},
-    logout: () => {},
-    signup: () => {}
+    login: () => { },
+    logout: () => { },
+    signup: () => { }
 }
 
 const AuthContext = createContext(defaultAuthValue);
 
 const authReducer = (state, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case ERROR:
             return {
                 ...state,
@@ -65,8 +65,8 @@ export const AuthProvider = props => {
         if (AuthLogic.isLoggedIn()) {
             dispatch({ type: PENDING });
             return AuthLogic.user()
-                            .then(user => dispatch({ type: LOGIN_SUCCESS, user }))
-                            .catch(err => (console.error(err), logout()));
+                .then(user => dispatch({ type: LOGIN_SUCCESS, user }))
+                .catch(err => (console.error(err), logout()));
         };
     };
 
@@ -75,18 +75,18 @@ export const AuthProvider = props => {
     const login = data => {
         dispatch({ type: PENDING });
         return AuthLogic.login(data)
-                        .then(() => AuthLogic.user())
-                        .then(user => dispatch({ type: LOGIN_SUCCESS, user }))
-                        .catch(err => (dispatch({ type: ERROR, error: "Invalid email or password. Try again!"}), console.error(err)));
+            .then(() => AuthLogic.user())
+            .then(user => dispatch({ type: LOGIN_SUCCESS, user }))
+            .catch(err => (dispatch({ type: ERROR, error: "Invalid email or password. Try again!" }), console.error(err)));
     };
 
     const signup = data => {
         dispatch({ type: PENDING });
         AuthLogic.signup(data)
-                 .then(() => login(data))
-                 .catch(err => (console.error(err), dispatch({ type: ERROR, error: "Invalid email or password or account already exists. Try again!"})))
+            .then(() => login(data))
+            .catch(err => (console.error(err), dispatch({ type: ERROR, error: "Invalid email or password or account already exists. Try again!" })))
     };
-    
+
     const value = {
         ...state,
         login,

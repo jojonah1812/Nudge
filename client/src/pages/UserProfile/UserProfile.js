@@ -3,7 +3,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import Input from "react-bootstrap/Form";
 //import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Users from "../../components/UserprofileForm";
+//import Users from "../../components/UserprofileForm";
 import API from "../../utils/axios/API";
 import { Col, Row, Container, InputGroup } from "react-bootstrap";
 
@@ -31,11 +31,11 @@ const UserProfile = () => {
   }
 
   // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteJob(id) {
-    API.deleteJob(id)
-      .then(res => loadUsers())
-      .catch(err => console.log(err));
-  }
+ // function deleteJob(id) {
+ //    API.deleteJob(id)
+ //     .then(res => loadUsers())
+ //     .catch(err => console.log(err));
+ // }
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
