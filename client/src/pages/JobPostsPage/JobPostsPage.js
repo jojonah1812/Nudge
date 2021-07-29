@@ -23,8 +23,7 @@ const JobPosts = () => {
     //if (posts.position && posts.positionDesc && posts.positionReqLang
     //  && posts.positionReqTech && posts.positionReqExp && posts.salaryRange && posts.nameAuthor
     //  && posts.emailAuthor) {
-    console.log("Hello")
-    API.saveJob({
+     API.saveJob({
       position: posts.position,
       positionDesc: posts.positionDesc,
       positionReqLang: posts.positionReqLang,
