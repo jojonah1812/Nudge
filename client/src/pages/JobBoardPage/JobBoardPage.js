@@ -65,7 +65,6 @@ const JobBoardPage = () => {
           </Card>
         </Col>
       </Row>
-      
     </Container>
   );
 }

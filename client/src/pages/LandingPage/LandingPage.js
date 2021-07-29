@@ -26,7 +26,8 @@ class LandingPage extends Component {
 
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Remember me" />
-            </Form.Group>
+
+           </Form.Group>
             <Button variant="primary" type="submit">
               Submit
             </Button>
@@ -50,7 +51,7 @@ class LandingPage extends Component {
 
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridName">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Name</Form.Label>
                 <Form.Control type="text" placeholder="First and Last Name" />
               </Form.Group>
 

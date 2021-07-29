@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Jumbotron from "react-bootstrap/Jumbotron";
+import React, { useState } from "react";
+//import Jumbotron from "react-bootstrap/Jumbotron";
+//import Card from "react-bootstrap/Card";
 //import Posts from "../../components/Posts";
 import API from "../../utils/axios/API";
 import { Col, Row, Container, Button } from "react-bootstrap";
@@ -22,8 +23,7 @@ const JobPosts = () => {
     //if (posts.position && posts.positionDesc && posts.positionReqLang
     //  && posts.positionReqTech && posts.positionReqExp && posts.salaryRange && posts.nameAuthor
     //  && posts.emailAuthor) {
-    console.log("Hello");
-    API.saveJob({
+     API.saveJob({
       position: posts.position,
       positionDesc: posts.positionDesc,
       positionReqLang: posts.positionReqLang,
@@ -31,15 +31,16 @@ const JobPosts = () => {
       positionReqExp: posts.positionReqExp,
       salaryRange: posts.salaryRange,
       nameAuthor: posts.nameAuthor,
-      emailAuthor: posts.emailAuthor,
+      emailAuthor: posts.emailAuthor
     })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
-    //   }
-  }
-  useEffect(() => {
-    console.log(posts);
-  }, [handleFormSubmit]);
+      }
+ // }
+  //useEffect(() => {
+  //  console.log(posts);
+ // }, [posts]);
+
   return (
     <Container fluid>
       <Row>
@@ -86,7 +87,7 @@ const JobPosts = () => {
               />
               <Input
                 onChange={handleInputChange}
-                name="nameEmail"
+                name="emailAuthor"
                 placeholder="Email of Author of Job Post (required)"
               />
               <Button type="submit" onClick={handleFormSubmit}>

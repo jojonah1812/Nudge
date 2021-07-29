@@ -17,8 +17,8 @@ export function TextArea(props) {
     </div>
   );
 }
-
-export function FormBtn(props) {
+//Changed function name to Button from FormBtn to match Button statement in JobPostsPage.js
+export function Button(props) {
   return (
     <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
       {props.children}
